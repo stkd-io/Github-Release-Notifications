@@ -42,7 +42,7 @@ if environ.get('GITHUB_REPO') is not None:
 if environ.get('CHECK_TIMER') is not None:
     CHECK_TIMER = os.environ['CHECK_TIMER']
 else:
-    CHECK_TIMER = 60
+    CHECK_TIMER = 10
 
 ##########################
 #
