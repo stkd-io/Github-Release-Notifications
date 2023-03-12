@@ -6,9 +6,6 @@ services:
 stages:
   - build
 
-before_script:
-  - docker info
-
 build_image:
   stage: build
   variables:
