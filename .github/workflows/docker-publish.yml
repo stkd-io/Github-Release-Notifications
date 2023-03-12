@@ -74,7 +74,7 @@ jobs:
             type=ref,event=tag
             type=ref,event=pr
             type=raw,value=latest,enable={{is_default_branch}}
-            type=raw,calue=${{ IMAGE_TAG }}
+            type=raw,value=${{ env.IMAGE_TAG }}
 
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
