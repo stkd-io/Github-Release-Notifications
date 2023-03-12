@@ -20,7 +20,7 @@ env:
   REGISTRY: docker.io
   # github.repository as <account>/<repo>
   IMAGE_NAME: stkdio/github-release-notifications
-  IMAGE_TAG: 1.0.${{.github.run_number }}
+  IMAGE_TAG: 1.0.${{ github.run_number }}
 
 
 jobs:
