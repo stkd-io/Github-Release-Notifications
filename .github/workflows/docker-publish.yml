@@ -69,7 +69,7 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
-              type=raw,value=latest,enable={{is_default_branch}}
+              type=raw,value=latest,enable=${{is_default_branch}}
               ${{ env.IMAGE_TAG }}
 
       # Build and push Docker image with Buildx (don't push on PR)
