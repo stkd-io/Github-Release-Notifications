@@ -17,12 +17,9 @@ from github import Github
 if environ.get('PD_API_KEY') is not None:
     #Service -> Custom Change Event Transformer key
     PD_API_KEY = os.environ['PD_API_KEY']
-
     #Setting Pager duty
     session = pdpyras.EventsAPISession(PD_API_KEY)
-#Service to page in pager duty
-if environ.get('PD_SERVICE') is not None:
-    PD_SERVICE = os.environ['PD_SERVICE'] 
+
 
 
 #Slack variables
