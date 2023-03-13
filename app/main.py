@@ -17,12 +17,9 @@ from github import Github
 if environ.get('PD_API_KEY') is not None:
     #Service -> Custom Change Event Transformer key
     PD_API_KEY = os.environ['PD_API_KEY']
-
     #Setting Pager duty
     session = pdpyras.EventsAPISession(PD_API_KEY)
-#Service to page in pager duty
-if environ.get('PD_SERVICE') is not None:
-    PD_SERVICE = os.environ['PD_SERVICE'] 
+
 
 
 #Slack variables
@@ -42,7 +39,7 @@ if environ.get('GITHUB_REPO') is not None:
 if environ.get('CHECK_TIMER') is not None:
     CHECK_TIMER = os.environ['CHECK_TIMER']
 else:
-    CHECK_TIMER = 60
+    CHECK_TIMER = 10
 
 ##########################
 #
@@ -75,7 +72,7 @@ def main():
 
     for release in releases:
         #Check if released in the last hour
-        if (datetime.utcnow() - datetime.strptime(str(release.published_at), '%Y-%m-%d %H:%M:%S')) < timedelta(minutes=CHECK_TIMER):
+        if (datetime.utcnow() - datetime.strptime(str(release.published_at), '%Y-%m-%d %H:%M:%S')) < timedelta(minutes=int(CHECK_TIMER)):
             message = "[!] New Release: " + release.title 
             #sendAlert(message)
             quit()
