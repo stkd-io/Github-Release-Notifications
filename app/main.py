@@ -72,7 +72,7 @@ def main():
 
     for release in releases:
         #Check if released in the last hour
-        if (datetime.utcnow() - datetime.strptime(str(release.published_at), '%Y-%m-%d %H:%M:%S')) < timedelta(minutes=CHECK_TIMER):
+        if (datetime.utcnow() - datetime.strptime(str(release.published_at), '%Y-%m-%d %H:%M:%S')) < timedelta(minutes=int(CHECK_TIMER)):
             message = "[!] New Release: " + release.title 
             #sendAlert(message)
             quit()
