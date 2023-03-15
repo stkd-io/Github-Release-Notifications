@@ -2,7 +2,7 @@ FROM python:alpine3.15
 
 ENV TZ=""
 ENV PD_API_KEY=""
-ENV PD_SERVICE=""
+ENV PD_SERVICE_NAME=""
 ENV SLACK_API=""
 ENV SLACK_CHANNEL_NAME=""
 ENV GITHUB_API=""
@@ -28,7 +28,9 @@ RUN pip install feedparser;\
     pip install os;\
     pip install slack_sdk;\
     pip install requests;\
-    pip install PyGithub
+    pip install PyGithub;\
+    pip install ssl;\
+    pip install certifi
 
 #Patch the image
 RUN apk upgrade
