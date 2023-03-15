@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+env.sh
 *.DS_Store*
 
 # C extensions
