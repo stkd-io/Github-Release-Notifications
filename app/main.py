@@ -21,34 +21,39 @@ if environ.get('PD_API_KEY') is not None:
     PD_API_KEY = os.environ['PD_API_KEY']
 else:
     sys.stdout.write("[!] No Pager Duty API Key detected\n")
-
+    exit(1)
 
 if environ.get('PD_SERVICE_NAME') is not None:
     PD_SERVICE_NAME = os.environ['PD_SERVICE_NAME']
 else:
     sys.stdout.write("[!] No Pager Duty Service Name detected\n")
+    exit(1)
 
 #Slack variables
 if environ.get('SLACK_CHANNEL_NAME') is not None:
     SLACK_CHANNEL_NAME = os.environ['SLACK_CHANNEL_NAME']
 else:
     sys.stdout.write("[!] No Slack channel name set\n")
+    exit(1)
 
 if environ.get('SLACK_API') is not None:
     SLACK_API = os.environ['SLACK_API']
 else:
     sys.stdout.write("[!] No Slack API Key detected\n")
+    exit(1)
 
 #Github variables
 if environ.get('GITHUB_API') is not None:
     GITHUB_API = os.environ['GITHUB_API']    
 else:
     sys.stdout.write("[!] No GitHub API Key detected\n")
+    exit(1)
 
 if environ.get('GITHUB_REPO') is not None:
     GITHUB_REPO = os.environ['GITHUB_REPO'] 
 else:
     sys.stdout.write("[!] No GitHub Repo detected\n")
+    exit(1)
 
 if environ.get('CHECK_TIMER') is not None:
     CHECK_TIMER = os.environ['CHECK_TIMER']
@@ -102,3 +107,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    exit(0)
